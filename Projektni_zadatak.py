@@ -4,18 +4,6 @@ korisnici = []
 kategorije = []
 prodaje = []
 
-adrese = []
-
-broj_adresa = int(input("Unesite broj adresa: "))
-
-for i in range(1, broj_adresa + 1):
-    adresa = {}
-    adresa["Ulica"] = input(f"Unesite naziv ulice {i}. adrese: ")
-    adresa["Kucni_broj"] = int(input(f"Unesite kucni broj {i}. adrese: "))
-    adresa["Grad"] = input(f"Unesite naziv grada {i}. adrese: ")
-    adrese.append(adresa)
-
-
 broj_korisnika = int(input("Unesite broj korisnika: "))
 
 for i in range(1, broj_korisnika + 1):
@@ -24,15 +12,6 @@ for i in range(1, broj_korisnika + 1):
     korisnik["Prezime"] = input(f"Unesite prezime {i}. korisnika: ").capitalize()
     korisnik["Telefon"] = int(input(f"Unesite telefon {i}. korisnika: "))
     korisnik["Email"] = input(f"Unesite email {i}. korisnika: ").strip()
-
-    print("Popis adresa: ")
-    for j, adresa in enumerate(adrese, start=1):
-        print(f'{j}. adresa: {adresa["Grad"]}, {adresa["Ulica"]}')
-
-    odabrana_adresa = int(input("Odabrana adresa: "))
-
-    korisnik["Adresa"] = adrese[odabrana_adresa - 1]
-
     korisnici.append(korisnik)
 
 
@@ -100,7 +79,6 @@ for i, prodaja in enumerate(prodaje, start=1):
     print(f'\tPrezime: {prodaja["Korisnik"]["Prezime"]}')
     print(f'\tTelefon: {prodaja["Korisnik"]["Telefon"]}')
     print(f'\tEmail: {prodaja["Korisnik"]["Email"]}')
-    print(f'\tAdresa: {prodaja["Korisnik"]["Adresa"]["Grad"]}, {prodaja["Korisnik"]["Adresa"]["Ulica"]}, {prodaja["Korisnik"]["Adresa"]["Kucni_broj"]}')
 
     print('Informacije o artiklu: ')
     print(f'\t Naslov: {prodaja["Artikl"]["Naslov"]}')

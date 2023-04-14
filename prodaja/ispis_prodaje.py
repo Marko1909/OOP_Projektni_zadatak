@@ -13,4 +13,10 @@ def ispis_prodaje(prodaja):
     print(f'\t Mjesec: {prodaja["Datum"].month}')
     print(f'\t Godina: {prodaja["Datum"].year}')
 
-    print('-' * 30)
+    print("\n")
+
+
+def ispis_svih_prodaja(prodaje):
+    print("Popis svih prodaja: ")
+    for prodaja in prodaje:
+        ispis_prodaje(prodaja)

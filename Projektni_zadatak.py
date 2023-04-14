@@ -1,28 +1,43 @@
-from korisnik import unos_korisnika, ispis_korisnika, get_korisnik
-from kategorija import unos_kategorije, get_kategorija
-from prodaja import unos_prodaje, ispis_prodaje
+from korisnik import unos_korisnika, ispis_svih_korisnika
+from kategorija import unos_kategorije, ispis_svih_kategorija
+from prodaja import unos_prodaje, ispis_svih_prodaja
+from utilities import unos_intervala
 
 korisnici = []
 kategorije = []
 prodaje = []
 
-broj_korisnika = int(input("Unesite broj korisnika: "))
+running = True
+while running:
+    print("-"*30)
+    print("1. Unos novog korisnika")
+    print("2. Unos novog kategorije")
+    print("3. Unos novog prodaje")
+    print("4. Ispis korisnika")
+    print("5. Ispis kategorija")
+    print("6. Ispis prodaja")
+    print("7. Zaustavi program")
+    print("-" * 30)
 
-for i in range(1, broj_korisnika + 1):
-    korisnici.append(unos_korisnika(i))
+    akcija = unos_intervala(1,7)
 
+    if akcija == 1:
+        korisnici.append(unos_korisnika(len(korisnici) + 1))
 
-broj_kategorija = int(input("Unesite broj kategorija: "))
+    elif akcija == 2:
+        kategorije.append(unos_kategorije(len(kategorije) + 1))
 
-for i in range(1, broj_kategorija + 1):
-    kategorije.append(unos_kategorije(i))
+    elif akcija == 3:
+        prodaje.append(unos_prodaje(korisnici, kategorije, len(prodaje) + 1))
 
+    elif akcija == 4:
+        ispis_svih_korisnika(korisnici)
 
-broj_prodaja = int(input("Unesite broj prodaja: "))
+    elif akcija == 5:
+        ispis_svih_kategorija(kategorije)
 
-for i in range(1, broj_prodaja + 1):
-    prodaje.append(unos_prodaje(korisnici, kategorije, i))
+    elif akcija == 6:
+        ispis_svih_prodaja(prodaje)
 
-for i, prodaja in enumerate(prodaje, start=1):
-    print(f"Prodaja {i}: ")
-    ispis_prodaje(prodaja)
+    elif akcija == 7:
+        running = False

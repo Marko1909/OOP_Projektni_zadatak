@@ -48,8 +48,8 @@ def unos_datuma(poruka):
 
             datum = date(godina, mjesec, dan)
 
-        except ValueError:
-            print("Neispravan datum")
+        except ValueError as e:
+            print(e)
 
         else:
             return datum

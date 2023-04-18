@@ -7,12 +7,13 @@ def get_kategorija(redni_broj, kategorija):
 def ispis_kategorije(kategorija):
     print(f'{kategorija["Naziv"]}')
 
+
 def ispis_svih_kategorija(kategorije):
-    for i, kategorija in enumerate(kategorije, start=1):
+    for kategorija in kategorije:
         ispis_kategorije(kategorija)
 
-        for j, artikl in enumerate(kategorije[i-1]["Artikli"], start=1):
-            print("Informacije o artiklu: ")
+        for j, artikl in enumerate(kategorija["Artikli"], start=1):
+            print(f"Informacije o {j}. artiklu: ")
             ispis_artikla(artikl)
 
         print("\n")

@@ -1,19 +1,15 @@
 from artikl import ispis_artikla
 
 def get_kategorija(redni_broj, kategorija):
-    return f'\t{redni_broj}. {kategorija["Naziv"]}'
-
-
-def ispis_kategorije(kategorija):
-    print(f'{kategorija["Naziv"]}')
+    return f'\t{redni_broj}. {kategorija.naziv}'
 
 
 def ispis_svih_kategorija(kategorije):
     for kategorija in kategorije:
-        ispis_kategorije(kategorija)
+        kategorija.ispis()
 
-        for j, artikl in enumerate(kategorija["Artikli"], start=1):
+        for j, artikl in enumerate(kategorija.artikl, start=1):
             print(f"Informacije o {j}. artiklu: ")
-            ispis_artikla(artikl)
+            artikl.ispis()
 
         print("\n")

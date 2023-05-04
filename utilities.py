@@ -73,3 +73,4 @@ def unos_intervala(min,max):
         else:
             return broj
 
+

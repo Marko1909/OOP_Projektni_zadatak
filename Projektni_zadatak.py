@@ -41,3 +41,4 @@ while running:
 
     elif akcija == 7:
         running = False
+

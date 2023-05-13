@@ -5,10 +5,8 @@ class Prodaja:
         self.artikl = artikl
 
     def ispis(self):
-        print('Informacije o korisniku: ')
         self.korisnik.ispis()
 
-        print('Informacije o artiklu: ')
         self.artikl.ispis()
 
         print('Datum isteka prodaje: ')

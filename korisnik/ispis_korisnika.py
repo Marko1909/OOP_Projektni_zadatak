@@ -1,5 +1,5 @@
 def get_korisnik(redni_broj, korisnik):
-    return f'\t{redni_broj}. {korisnik.ime} {korisnik.prezime}'
+    return f'\t {redni_broj}. Email: {korisnik.email}; Telefon: {korisnik.telefon}'
 
 
 def ispis_svih_korisnika(korisnici):

@@ -103,7 +103,7 @@ class Window(QtWidgets.QMainWindow):
         self.label_error.setGeometry(QtCore.QRect(50, offset * 6, 250, 30))
 
         # Gumb Unos korisnika
-        self.unos_korisnika_button =QtWidgets.QPushButton(self)
+        self.unos_korisnika_button = QtWidgets.QPushButton(self)
         self.unos_korisnika_button.setText('Unesi korisnika')
         self.unos_korisnika_button.setGeometry(QtCore.QRect(100, offset * 7, 150, 30))
         self.unos_korisnika_button.clicked.connect(self.unos_korisnika)

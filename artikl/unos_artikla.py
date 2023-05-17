@@ -19,7 +19,7 @@ def unos_artikla(redni_broj):
 
         return Stan(naslov, opis, cijena, kvadratura)
 
-    if tip_artikla == 2:
+    elif tip_artikla == 2:
         snaga = unos_pozitivnog_cijelog_broja(f'Unesite snagu automobila: ')
 
         return Automobil(naslov, opis, cijena, snaga)

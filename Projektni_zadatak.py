@@ -1,7 +1,6 @@
 from PyQt5 import QtWidgets, QtGui, QtCore
 import sys
 
-import artikl
 from enumeratori import TipKorisnika, TipArtikla
 from korisnik import PoslovniKorisnik, PrivatniKorisnik
 from artikl import Automobil, Stan
@@ -332,10 +331,8 @@ class Window(QtWidgets.QMainWindow):
 
         # Grid layout for prodaja
         self.g_layout_p = QtWidgets.QGridLayout()
-        self.g_layout_p.setSizeConstraint(QtWidgets.QLayout.SetDefaultConstraint)
         self.g_layout_p.setRowMinimumHeight(1, 30)
         self.g_layout_p.setRowMinimumHeight(2, 30)
-
 
         self.v_layout_prodaja = QtWidgets.QVBoxLayout()
         self.v_layout_prodaja.setContentsMargins(5, 25, 5, 15)

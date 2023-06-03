@@ -24,8 +24,9 @@ class PrivatniKorisnik(Korisnik):
         self.__prezime = prezime
 
     def ispis(self):
-        print('Informacije o privatnom korisniku: ')
-        print(f'\tIme: {self.ime}')
-        print(f'\tPrezime: {self.prezime}')
-        print(f'\tTelefon: {self.telefon}')
-        print(f'\tEmail: {self.email}')
+        return f'{self.ime} {self.prezime}, {self.email}, {self.telefon}'
+        #print('Informacije o privatnom korisniku: ')
+        #print(f'\tIme: {self.ime}')
+        #print(f'\tPrezime: {self.prezime}')
+        #print(f'\tTelefon: {self.telefon}')
+        #print(f'\tEmail: {self.email}')

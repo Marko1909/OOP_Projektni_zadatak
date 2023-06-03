@@ -77,22 +77,50 @@ def unos_intervala(min,max):
 
 
 def provjera_korisnickog_unosa(telefon, email, ime, prezime):
-        try:
-            if len(email) == 0 or len(ime) == 0 or len(prezime) == 0:
-                raise IznimkaPrazanTekst()
-        except IznimkaPrazanTekst as e:
-            return str(e)
+    try:
+        if len(email) == 0 or len(ime) == 0 or len(prezime) == 0:
+            raise IznimkaPrazanTekst()
 
-        try:
-            if len(telefon) != 8:
-                raise IznimkaTelefon()
-        except IznimkaTelefon as e:
-            return str(e)
+        if len(telefon) != 8:
+            raise IznimkaTelefon()
 
-        try:
-            broj = int(telefon)
-        except ValueError:
-            return str('Telefon mora biti broj')
+        broj = int(telefon)
 
-        else:
-            return None
+    except IznimkaPrazanTekst as e:
+        return str(e)
+
+    except IznimkaTelefon as e:
+        return str(e)
+
+    except ValueError:
+        return str('Telefon mora biti broj')
+
+    else:
+        return None
+
+
+def provjera_unosa_artikla(naslov, opis, cijena, snaga):
+    try:
+        if len(naslov) == 0 or len(opis) == 0 or cijena == '' or snaga == '':
+            raise IznimkaPrazanTekst()
+
+        if int(cijena) < 0 or int(snaga) < 0:
+            raise Exception(f"Potrebno upisati pozitivan cijeli broj!")
+
+    except IznimkaPrazanTekst as e:
+        return str(e)
+
+    except ValueError:
+        return('Potrebno upisati broj!')
+
+    except Exception as e:
+        return str(e)
+
+
+def provjera_unosa_prodaje(korisnik, prodaja):
+    try:
+        if korisnik == '' or prodaja == '':
+            raise IznimkaPrazanTekst()
+
+    except IznimkaPrazanTekst as e:
+        return str(e)

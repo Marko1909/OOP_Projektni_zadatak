@@ -5,13 +5,15 @@ class Prodaja:
         self.artikl = artikl
 
     def ispis(self):
-        self.korisnik.ispis()
+        return f'{self.korisnik.email}: {self.artikl.naslov}'
 
-        self.artikl.ispis()
+        #self.korisnik.ispis()
 
-        print('Datum isteka prodaje: ')
-        print(f'\t Dan: {self.datum.day}')
-        print(f'\t Mjesec: {self.datum.month}')
-        print(f'\t Godina: {self.datum.year}')
+        #self.artikl.ispis()
 
-        print("\n")
+        #print('Datum isteka prodaje: ')
+        #print(f'\t Dan: {self.datum.day}')
+        #print(f'\t Mjesec: {self.datum.month}')
+        #print(f'\t Godina: {self.datum.year}')
+
+        #print("\n")

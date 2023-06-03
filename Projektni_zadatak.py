@@ -22,7 +22,7 @@ class Window(QtWidgets.QMainWindow):
     def initUI(self):
         self.font = QtGui.QFont('Arial', 8)
 
-        # Frame korisnik
+# Frame korisnik
         self.frame_korisnik = QtWidgets.QFrame(self)
         self.frame_korisnik.setGeometry(QtCore.QRect(25, 30, 460, 220))
         self.frame_korisnik.setFrameShape(QtWidgets.QFrame.WinPanel)
